@@ -41,7 +41,7 @@
                <div class="header__navbar">
                   <ul class="list-unstyled">
                      <li class="has-sub">
-                        <a href="{{ url('/dashboard') }}">
+                        <a href="{{ url('/') }}">
                         <i class="fas fa-tachometer-alt"></i>Dashboard
                         <span class="bot-line"></span>
                         </a>
@@ -86,6 +86,25 @@
                         <i class="fas fa-trophy"></i>
                         <span class="bot-line"></span>Add Services</a>
                      </li>
+
+                     <li class="has-sub">
+                        <a href="#">
+                        <i class="fas fa-tachometer-alt"></i>Reports
+                        <span class="bot-line"></span>
+                        </a>
+                        <ul class="header3-sub-list list-unstyled">
+                           <li>
+                              <a href="{{ url('dashboard/reports/summaryReports') }}">Summary Reports</a>
+                           </li>
+                           <li>
+                              <a href="{{ url('dashboard/reports/dailyReport') }}">Daily Report</a>
+                           </li>
+                           <li>
+                              <a href="{{ url('dashboard/reports/monthlyReport') }}">Monthly Report</a>
+                           </li>
+                        </ul>
+                     </li>
+
                      <li>
                         <a href="{{ url('dashboard/pos') }}">
                         <i class="fas fa-trophy"></i>

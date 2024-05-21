@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('front-website/index');
 // });
 
-    Route::get('/', function () {
-        return view('front-website.index');
-    });
+    // Route::get('/', function () {
+    //     return view('front-website.index');
+    // });
     Route::get('/blog', function () {
         return view('front-website.blog');
     });
@@ -37,7 +37,7 @@ use Illuminate\Support\Facades\Route;
     // Route::get('/',function(){
     //     return redirect('login');
     // });
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index');
     Route::prefix('dashboard')->group(function () {
         
         Route::middleware(['can:isOwner'])->group(function () {
@@ -84,6 +84,14 @@ use Illuminate\Support\Facades\Route;
         });
         
         Route::middleware(['can:isManager'])->group(function(){
+
+            Route::get('/clients','ClientImagesController@list');
+            Route::get('/clients/create','ClientImagesController@create');
+            Route::post('/clients/create','ClientImagesController@create');
+            Route::get('/clients/edit/{id?}','ClientImagesController@update');
+            Route::post('/clients/edit/{id?}','ClientImagesController@update');
+            Route::get('clients/delete/{id?}','ClientImagesController@delete');
+
             Route::get('/employes','EmployeController@list');
             Route::get('/employes/create','EmployeController@create');
             Route::post('/employes/create','EmployeController@create');
